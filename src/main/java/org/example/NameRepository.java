@@ -145,4 +145,27 @@ public class NameRepository {
             System.out.println("n=" + n + " name=\"" + names[n] + "\"");
         }
     }
+
+    public static boolean remove(final String fullName) {
+        int namePosition = -1;
+        for(int n = 0; n < names.length; n++){
+            //{"Firstname Lastname"}
+            if(names[n].equals(fullName)){
+                String[] tmp = new String[names.length - 1];
+                namePosition = n;
+                // Everthing after this is deep copy
+                for(int k = 0; k < tmp.length; k++){
+                    if(k < namePosition){
+                        tmp[k] = names[k];
+                    } else {
+                        tmp[k] = names[k+1];
+                    }
+                }
+                names = tmp;
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
