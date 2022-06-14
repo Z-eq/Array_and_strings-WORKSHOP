@@ -9,11 +9,8 @@ public class Main {
         };
         NameRepository nr1 = new NameRepository(tmp);
         NameRepository.add("Simon Elbrink");
-        NameRepository.add("Zeq Alidemaj1");
-        NameRepository.add("Zeq Alidemaj2");
-        NameRepository.add("Zeq Alidemaj3");
-        NameRepository.add("Zeq Alidemaj4");
-        NameRepository.add("Zeq Alidemaj5");
+        NameRepository.add("John Mayer");
+
         for(String name : NameRepository.findAll()){
             System.out.println("Name:" + name);
         }

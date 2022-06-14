@@ -104,7 +104,25 @@ public class NameRepository {
     public static String[] findByLastName(final String lastName) {
 
         int counter = 0;
-        for ()
+
+        for (String fullName : names) {
+            // "Firstname lastname"
+            // fullNames[0]   fullNames[1]
+            //{"Firstname", "lastname"}
+            String[] fullNames = fullName.split(" ");
+            if(fullNames[1].startsWith(lastName)){
+                counter++;
+            }
+        }
+        String[] tmp = new String[counter];
+        counter = 0;
+        for (String fullName : names) {
+            String[] fullNames = fullName.split(" ");
+            if(fullNames[1].startsWith(lastName)){
+                tmp[counter++] = fullName;
+            }
+        }
+        return tmp;
     }
 }
 
